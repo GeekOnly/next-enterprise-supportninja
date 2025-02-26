@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
 import Link from 'next/link';
+import { text } from "stream/consumers";
 
 const SecondPage = () => {
 
@@ -50,50 +51,32 @@ const SecondPage = () => {
         },
       ];
 
-      const canvasRef = useRef<HTMLCanvasElement | null>(null);
       const [currentPage, setCurrentPage] = useState(0);
       const textPerPage = 2; // จำนวนข้อความต่อหน้า
       const texts = [
-        "ข้อความหน้า 1: ข้อความที่ 1",
-        "ข้อความหน้า 1: ข้อความที่ 2",
-        "ข้อความหน้า 2: ข้อความที่ 1",
-        "ข้อความหน้า 2: ข้อความที่ 2",
-        "ข้อความหน้า 3: ข้อความที่ 1",
-        "ข้อความหน้า 3: ข้อความที่ 2",
+        "SupportNinja is really responsive and flexible based on our needs. Butwhat we're really, really happy about is the Ninjas and their commitment to the brand. They're like an extension of our team!",
+        "Sudip Dasgupta <br/> Head of Customer Experience, Product Madness",
+
+        "Our partnership with SupportNinja has helped meet client demands we couldn't handle internally. They have also given us great referrals with a much shorter sales cycle than we typically see.",
+        "Michael Hanson VP Growth, CloudTask",
+
+        "I love the communication that we have with management, especially when we need to address something. It gets handled really quickly! Beyond this, I get great support, they're reliable and they get the job done.",
+        "Lorna Quijano  Full Service Manager, RedWeek",
+
+        "SupportNinja has really been flexible with us as we're growing the business, and have been really responsive and accommodating. They've been integral to helping our business grow.",
+        "Pam Schwab  VP of Quality & Customer Care, SymmetryRx",
       ];
     
       useEffect(() => {
-        const canvas = canvasRef.current;
-        if (canvas) {
-          const ctx = canvas.getContext("2d");
-          if (ctx) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // ล้าง canvas
-            ctx.font = "20px Arial";
-            ctx.textAlign = "center";
-    
-            // แสดงข้อความ
-            const startIndex = currentPage * textPerPage;
-            const endIndex = startIndex + textPerPage;
-            const currentTexts = texts.slice(startIndex, endIndex);
-    
-            currentTexts.forEach((text, index) => {
-              ctx.fillText(text, canvas.width / 2, 50 + index * 30); // วางข้อความ
-            });
-          }
-        }
-      }, [currentPage]);
+
+      }, []);
     
       const handleNextPage = () => {
-        if ((currentPage + 1) * textPerPage < texts.length) {
-          setCurrentPage(currentPage + 1);
-        }
       };
     
       const handlePrevPage = () => {
-        if (currentPage > 0) {
-          setCurrentPage(currentPage - 1);
-        }
       };
+
   return (
     <div className="w-full mx-auto" >
     <br/>
@@ -172,13 +155,20 @@ const SecondPage = () => {
       ))}
      </div>
      <hr className="my-8 border-t-1 border-gray-300 dark:border-gray-600" />
+     
+     <div className="flex justify-center items-center">
+       <h1 className="mb-1 max-w-1xl text-6xl leading-none tracking-tight md:text-12xl xl:text-6xl dark:text-white">
+       Why our clients stick with us </h1>
+     </div>
 
-     <h1 className="mb-7 max-w-1xl text-6xl leading-none tracking-tight md:text-12xl xl:text-6xl dark:text-white">
-     Why our clients stick with us </h1>
-// end
      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <h1>Canvas Text with Pagination</h1>
-      <canvas ref={canvasRef} width={500} height={200}  />
+        {texts.slice(currentPage * textPerPage, (currentPage + 1) * textPerPage).map((text, index) => (
+          <div className="relative bg-white flex flex-col justify-center items-center p-8">
+          <div key={index} className="text-gray-600 text-2xl leading-loose mb-4">
+            {text}
+          </div>
+          </div>
+        ))}
       <div style={{ display: "flex", justifyContent: "space-between", width: "100%", marginTop: "20px" }}>
         <span>หน้า {currentPage + 1} ของ {Math.ceil(texts.length / textPerPage)}</span>
         <hr className="my-8 border-t-1 border-gray-300 dark:border-gray-600" />

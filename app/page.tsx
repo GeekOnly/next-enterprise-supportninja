@@ -1,8 +1,6 @@
-import { Metadata } from "next"
-import { Button } from "components/Button/Button"
 import Home from "./pages/Home"
 import UseImage from "components/Image/UseImage";
-import SecondPage from "./pages/Second";
+import SecondPage from "./pages/TwoPage";
 import ThridPage from "./pages/Threepage";
 import FourPage from "./pages/FourPage";
 import FivePage from "./pages/FivePage";
