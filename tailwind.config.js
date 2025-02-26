@@ -26,9 +26,12 @@ module.exports = {
           700: "#1d4ed8",
           800: "#1e40af",
           900: "#1e3a8a",
+          'custom-pink': '#F7E1D2',
+          'custom-Gray': '#BFC1B9',
         },
       },
       fontFamily: {
+        
         body: [
           "Inter",
           "ui-sans-serif",
@@ -47,6 +50,7 @@ module.exports = {
           "Noto Color Emoji",
         ],
         sans: [
+          "Playfair Display",
           "Inter",
           "ui-sans-serif",
           "system-ui",
@@ -63,6 +67,7 @@ module.exports = {
           "Segoe UI Symbol",
           "Noto Color Emoji",
         ],
+        Poly:["Playfair Display",],
       },
       borderWidth: {
         DEFAULT: "1px",
