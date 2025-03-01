@@ -24,3 +24,8 @@
   color: black; /* หรือสีที่เห็นได้ชัด */
   font-size: 24px;
 }
+
+.swiperPagination {
+  text-align: left; /* ทำให้ข้อความหรือลูกองค์ประกอบภายในชิดซ้าย */
+  gap: 8px;
+}

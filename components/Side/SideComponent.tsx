@@ -106,8 +106,6 @@ const SliderCard: React.FC = () => {
 
           {/* Pagination & Navigation */}
           <div className={`${styles.swiperPagination} swiper-pagination`} />
-          <div className={`${styles.swiperButtonPrev} swiper-button-prev`} />
-          <div className={`${styles.swiperButtonNext} swiper-button-next`} />
         </div>
       </div>
     </div>
