@@ -40,7 +40,7 @@ const SliderCard: React.FC = () => {
   const swiperInstanceRef = useRef<Swiper | null>(null);
 
   useEffect(() => {
-    if (!swiperRef.current) return;
+    if (!swiperRef.current ) return;
 
     const swiper = new Swiper(swiperRef.current, {
       modules: [Navigation, Pagination],
@@ -48,12 +48,14 @@ const SliderCard: React.FC = () => {
       slidesPerView: 1,
       spaceBetween: 20,
       navigation: {
-        nextEl: `.${styles.swiperButtonNext}`,
-        prevEl: `.${styles.swiperButtonPrev}`,
+        nextEl: ".custom-swiper-button-next",
+        prevEl: ".custom-swiper-button-prev",
       },
       pagination: {
-        el: `.${styles.swiperPagination}`,
+        el: `.swiper-pagination`,
         clickable: true,
+        bulletClass: "custom-pagination-dot",
+        bulletActiveClass: "custom-pagination-dot-active",
       },
       preventClicks: true,
       preventClicksPropagation: true,
@@ -104,8 +106,52 @@ const SliderCard: React.FC = () => {
             ))}
           </div>
 
-          {/* Pagination & Navigation */}
-          <div className={`${styles.swiperPagination} swiper-pagination`} />
+            {/* Pagination Dots */}
+            <div className={`${styles.swiperPagination} swiper-pagination`} />
+
+            {/* Navigation Buttons */}
+            <div className="flex items-center gap-2 justify-end">
+            {/* ปุ่มก่อนหน้า */}
+            <div className=" flex items-center  bg-gray-800 rounded-full">
+            <button
+              className="custom-swiper-button-prev slider-button flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full transition"
+              aria-label="Previous slide"
+            >
+              <svg
+                width="12"
+                height="11"
+                viewBox="0 0 12 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.5525 5.292L5.5845 10.308L6.7845 9.124L3.8005 6.132H11.2325V4.468H3.8005L6.7845 1.476L5.5845 0.268L0.5525 5.292Z"
+                  fill="white"
+                />
+              </svg>
+            </button>          
+
+            {/* ปุ่มถัดไป */}
+            <button
+              className="custom-swiper-button-next slider-button flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full transition"
+              aria-label="Next slide"
+            >
+              <svg
+                width="12"
+                height="11"
+                viewBox="0 0 12 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.4405 5.292L6.4085 0.268L5.2085 1.46L8.2005 4.452H0.7605V6.116H8.2005L5.2085 9.108L6.4085 10.308L11.4405 5.292Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+          </div>
+          </div>
+  
         </div>
       </div>
     </div>
