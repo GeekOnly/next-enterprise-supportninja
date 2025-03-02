@@ -1,6 +1,8 @@
 "use client";
 import Head from "next/head";
 import CheckboxSlide from "components/Checkbox/Checkbox";
+import GetStartedButton from 'components/GetStartedButton/GetStartedButton';
+
 
 const checkboxItems = [
   {
@@ -98,39 +100,50 @@ export default function Home() {
           </div>
 
           <br />
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="flex justify-center text-white w-30 bg-red-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-base px-25 py-3 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Get Started
-            </button>
+          <div className="flex justify-center py-4 mb-20">
+            <GetStartedButton/>
           </div>
 
-          <div className="flex items-center justify-between bg-gray-100 p-4 mb-4">
-            <div className="flex-1 text-left">
-              <h2 className="text-xs font-light">
+          <div className="flex items-center justify-between bg-[#BFC1B9] rounded-lg py-10 px-5 mx-15 mb-4">
+            <div className="text-left">
+              <h2 className="text-2xl font-semibold leading-relaxed">
                 Driving better business results <br /> for 200+ companies.
               </h2>
             </div>
-            <div className="flex flex-row space-x-1">
+            <div className="flex flex-row items-center gap-4">
               <img
                 src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c0380ce484b_B%26MG_foundation.svg"
                 alt="BMG Foundation"
-                className="w-5 h-auto"
+                className="w-30 h-auto"
               />
               <img
                 src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64f9e7ede9b6df55f6f1a029_Midjourney%20Logo%20(1).svg"
                 alt="Midjourney Logo"
-                className="w-5 h-auto"
+                className="w-30 h-auto"
               />
               <img
                 src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/65a7f1f93afe1bee1bb429a4_Happy%20Socks%20Logo.svg"
                 alt="Happy Socks Logo"
-                className="w-15 h-auto"
+                className="w-30 h-auto"
+              />
+              <img
+                src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0c0a86ce483a_Customer%20Logo__Vidyard.svg"
+                alt="BMG Foundation"
+                className="w-30 h-auto"
+              />
+              <img
+                src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cd632ce484a_redweek.svg"
+                alt="Midjourney Logo"
+                className="w-30 h-auto"
+              />
+              <img
+                src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cd161ce4839_Customer%20Logo__Product%20Madness.svg"
+                alt="Happy Socks Logo"
+                className="w-30 h-auto"
               />
             </div>
           </div>
+
         </div>
       </section>
     </>

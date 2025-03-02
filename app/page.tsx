@@ -13,7 +13,6 @@ export default function Web() {
     <Home></Home>
     <UseImage imageUrl="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cc5c4ce4784_Bottom%20Squiggle.svg"/>
     <SecondPage />
-    {/* Integrate the SliderCard component */}
     
     <div className="">
     <div className="flex justify-center items-center">

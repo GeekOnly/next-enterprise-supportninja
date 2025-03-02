@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { Button } from 'components/Button/Button';
+
 
 const options = {
   "Management-as-a-Service": [
@@ -27,7 +29,6 @@ const ThridPage = () => {
   return(
     <>
     <div className="flex bg-primary-custom-Gray h-screen w-full">
-    {/* Section Left (30%) */}
     <div className="relative w-3/10 flex items-center justify-center">
       <Image
         src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cafddce47aa_Avatar%20Circle__08.svg" // เปลี่ยนเป็น URL หรือ path ของภาพ
@@ -47,50 +48,47 @@ const ThridPage = () => {
       />
     </div>
 
-    {/* Section Center (40%) */}
     <div className="w-4/10 flex flex-col justify-center items-center p-8">
-      <h1 className="text-6xl font-light mb-4">Spanning a wider
+      <h1 className="text-6xl font-bold py-5 mb-4">Spanning a wider <br/>
       world of talent</h1>
       <p className="mb-4">
       What are the odds that the most qualified people in the world live in your zip code? We’ll help you see further.
       </p>
-      <p className="mb-4">
+      <p className="mb-4 ">
       A global team extends your presence across time zones and languages—which means longer reach, constant uptime, and happier customers.
       </p>
-      <p className="mb-4 font-bold">
+      <p className="mb-4 font-bold px-8">
       It’s time to go international. No passport required.</p>
 
-      <button type="button" className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Get Started</button>
-
+      <div className="justify-center">
+            <Button className="bg-[#0C3A23] rounded-full border-green-900 text-white hover:text-black hover:bg-primary-custom-Gray " href="https://example.com">
+            Get Started
+            </Button>
+      </div>
     </div>
 
-    
-
-    {/* Section Right (30%) */}
     <div className=" relative w-3/10 flex items-center justify-center">
     <Image
         src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cafddce47aa_Avatar%20Circle__08.svg" // เปลี่ยนเป็น URL หรือ path ของภาพ
         alt="Example Image"
-        width={50} // Specify the width
-        height={50} // Specify the height
+        width={50}
+        height={50}
         objectFit="cover"
         className="relative top-0 left-0"
       />
        <Image
         src="https://cdn.prod.website-files.com/64149f79022d0c5fc8ce46e8/64149f79022d0cafddce47aa_Avatar%20Circle__08.svg" // เปลี่ยนเป็น URL หรือ path ของภาพ
         alt="Example Image"
-        width={50} // Specify the width
-        height={50} // Specify the height
+        width={50}
+        height={50}
         objectFit="cover"
         className="relative top-0 left-0"
       />
     </div>
   </div>
-  // end
 
   <div className="w-full h-screen">
-  <div className="flex bg-gradient-to-r from-gray-100 to-gray-200 font-sans">
-  {/* ส่วนซ้าย */}
+  <div className="flex bg-primary-custom-Gray from-gray-100 to-gray-200 font-sans">
   <div className="relative w-1/2 flex flex-col items-center justify-center p-10">
     <h1 className="text-5xl md:text-6xl font-extrabold leading-relaxed text-gray-900 tracking-tight">
       Our Customized <br /> Approach
@@ -100,13 +98,11 @@ const ThridPage = () => {
     </p>
   </div>
 
-      {/* ส่วนขวา */}
         <div className="w-full flex flex-col justify-center items-center p-10 max-w-screen-lg">        
           <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
           Get Set Up in 5 Easy Steps
         </h1>
     
-        {/* ปุ่ม */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {Object.keys(options).map((service) => (
             <button
@@ -123,7 +119,6 @@ const ThridPage = () => {
           ))}
         </div>
     
-        {/* รายการขั้นตอน */}
         <div className="w-full max-w-md p-6">
           <ul className="list-decimal list-inside text-lg space-y-3 text-gray-700">
             {options[selectedService].map((text, index) => (
