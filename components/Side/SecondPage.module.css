@@ -18,14 +18,48 @@
   max-width: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-/* ปุ่ม Swiper */
-.swiper-button-prev, .swiper-button-next {
-  color: black; /* หรือสีที่เห็นได้ชัด */
-  font-size: 24px;
-}
-
 .swiperPagination {
   text-align: left; /* ทำให้ข้อความหรือลูกองค์ประกอบภายในชิดซ้าย */
   gap: 8px;
 }
+
+.swiper-button-prev, .swiper-button-next {
+  color: black; /* หรือสีที่เห็นได้ชัด */
+  font-size: 24px;
+  z-index: 10; 
+  font-size: 24px; /* Size of the arrow icon */
+}
+.custom-swiper-button-prev {
+  left: 10px;
+}
+
+.custom-swiper-button-next {
+  right: 10px;
+}
+
+/* Button Wrapper */
+.slider-button-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 100px; /* Adjust as needed */
+}
+
+/* Individual Slider Buttons */
+.slider-button {
+  cursor: pointer;
+  width: 40px; /* Adjust size */
+  height: 40px; /* Adjust size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover Effect for Slider Buttons */
+.slider-button:hover {
+  background-color: #888;
+}
+
